@@ -1,0 +1,132 @@
+body{
+    margin: 0;
+    background: #fff;
+}
+
+.CodeMirror{
+    max-height: 100%;
+    min-height: 500px;
+}
+
+.row{
+    width: 100%;
+    margin: 0;
+}
+.container{
+    width:100%;
+    padding: 0;
+}
+
+
+.h4{
+    margin: 2px;
+    text-transform: uppercase;
+    margin-left: 1%;
+}
+
+
+.inputdiv{
+    margin-top: 10px;
+}
+
+#input{
+    width:98%;
+    resize: none;
+    margin-left: 1%;
+}
+
+
+.compiler-msg{
+    width:98%;
+    margin-left: 1%;
+    margin-bottom: 6px;
+    padding: 5px;
+    background: #fff;
+}
+
+.runner{
+    background: #eeeeee;
+    visibility: hidden;
+}
+
+
+.langSelector{
+    margin: 2px 5px;
+    background: #eeeeee;
+}
+
+.lbl{
+    width: 80px;
+    display: inline-block;
+}
+
+.select{
+    display: inline;
+    width: auto;
+    border-radius: 0;
+}
+
+#run{
+    border: 0;
+    margin-top: 6px;
+    margin-right: 10px;
+    padding: 3px 5px 0px 5px;
+    font-size: 30px;
+    font-weight: 100;
+    color: #737373;
+    cursor: pointer;
+}
+#run:active{
+    color: #b7b7b7;
+}
+
+.loader {
+    border: 6px solid #8a8288;
+    border-radius: 50%;
+    border-top: 6px solid #53cbe6;
+    border-bottom: 6px solid #53cbe6;
+    width: 40px;
+    height: 40px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+#mainloader{
+    margin: 200px auto 0 auto;
+}
+
+#compileloader{
+    margin: 30px auto;
+}
+
+#target{
+    margin-top: 10px;
+    min-height: 120px;
+}
+
+.header{
+    margin-bottom: 0;
+}
+
+
+.inline{
+    display: inline-block;
+    width: 250px;
+    margin: 7px 0px;
+}
+
+.collapse{
+
+}

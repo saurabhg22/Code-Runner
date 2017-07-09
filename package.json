@@ -1,0 +1,19 @@
+{
+  "name": "coderunner",
+  "version": "1.0.0",
+  "description": "Code Runner is a platform where you can write, compile and run programs in all languages.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Saurabh Gupta",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "express-favicon": "^2.0.0",
+    "request": "^2.81.0"
+  }
+}

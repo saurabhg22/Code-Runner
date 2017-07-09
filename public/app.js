@@ -1,0 +1,1 @@
+angular.module('userApp', ['mainController', 'appRoutes']);

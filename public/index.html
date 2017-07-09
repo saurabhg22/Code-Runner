@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <base href="/">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+        <meta name="description" content="">
+        <meta name="author" content="Saurabh Gupta">
+
+        <!-- Supported Languages -->
+        <script type="text/javascript" src="assets/codemirror/languages.js"></script>
+
+
+
+
+        <!-- Main Angular Files -->
+        <script type="text/javascript" src="/assets/js/angular.js"></script>
+        <script type="text/javascript" src="/assets/js/angular-route.js"></script>
+        <!-- Angular Config/Routes -->
+        <script type="text/javascript" src="/app.js"></script>
+        <script type="text/javascript" src="/routes.js"></script>
+        <!-- Angular Controllers -->
+        <script type="text/javascript" src="/controllers/mainCtrl.js"></script>
+
+        <!-- Styles for adding line numbers -->
+
+
+        <!-- Cascade Style Sheets -->
+        <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+        <!-- CodeMirror -->
+        <script type="text/javascript" src="assets/codemirror/codemirror.js"></script>
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/codemirror.css">
+
+
+
+
+        <!-- Codemirror modes -->
+        <script type="text/javascript" src="assets/codemirror/mode/javascript.js"></script>
+        <script type="text/javascript" src="assets/codemirror/mode/clike.js"></script>
+        <script type="text/javascript" src="assets/codemirror/mode/python.js"></script>
+        <script type="text/javascript" src="assets/codemirror/mode/haskell.js"></script>
+        <script type="text/javascript" src="assets/codemirror/mode/php.js"></script>
+        <script type="text/javascript" src="assets/codemirror/mode/swift.js"></script>
+        <script type="text/javascript" src="assets/codemirror/mode/perl.js"></script>
+        <script type="text/javascript" src="assets/codemirror/mode/clojure.js"></script>
+        <script type="text/javascript" src="assets/codemirror/mode/r.js"></script>
+        <script type="text/javascript" src="assets/codemirror/mode/d.js"></script>
+        <script type="text/javascript" src="assets/codemirror/mode/ruby.js"></script>
+        <script type="text/javascript" src="assets/codemirror/mode/fortran.js"></script>
+        <script type="text/javascript" src="assets/codemirror/mode/go.js"></script>
+
+
+        <!-- Codemirror themes -->
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/ambiance.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/ambiance-mobile.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/blackboard.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/cobalt.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/colorforth.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/dracula.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/eclipse.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/elegant.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/hopscotch.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/icecoder.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/isotope.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/material.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/midnight.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/monokai.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/neat.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/neo.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/night.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/panda-syntax.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/paraiso-dark.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/paraiso-light.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/pastel-on-dark.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/solarized.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/the-matrix.css">
+        <link rel="stylesheet" type="text/css" href="assets/codemirror/theme/twilight.css">
+
+
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+        <title>Code Runner</title>
+
+    </head>
+
+    <body ng-app="userApp" ng-controller="mainCtrl as main" >
+
+
+        <div class="loader" ng-show="!main.loaded" id="mainloader"></div>
+
+
+
+
+        <div class="container runner" ng-show="main.loaded">
+
+            <nav class="navbar navbar-default header">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                            <span class="glyphicon glyphicon-play-circle" aria-hidden="true" id="run" ng-click="main.run();" ></span>
+
+                        <a class="navbar-brand">Code Runner</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                        <div class="nav navbar-nav inline navbar-right">
+                            <label for="theme" class="lbl">Theme:</label>
+                            <select class="form-control select" id="theme" ng-model="main.currentThemeIndex">
+                                <option value="{{ $index }}" ng-repeat="theme in main.themes">{{ theme.name }}</option>
+                            </select>
+                        </div>
+                        <div class="nav navbar-nav inline navbar-right">
+                            <label for="lang" class="lbl">Language:</label>
+                            <select class="form-control select" id="lang" ng-model="main.langIndex">
+                                <option value="{{ $index }}" ng-repeat="lang in main.languages">{{ lang.name }}</option>
+                            </select>
+                        </div>
+
+                    </div><!-- /.navbar-collapse -->
+
+                </div><!-- /.container-fluid -->
+            </nav>
+            <div class="row">
+                <div id="codeeditor"></div>
+            </div>
+            <div class="row inputdiv">
+                <h4 class="h4">Input</h4>
+                <textarea id="input" rows="5" ng-model="main.input"></textarea>
+            </div>
+
+
+
+            <div id="target" class="row">
+                <div class="loader" ng-show="main.compiling" id="compileloader"></div>
+                <div ng-show="main.error && !main.compiling">
+                    <h4 class="h4 text-danger">Compiler Message</h4>
+                    <pre class="compiler-msg">{{ main.cmsg }}</pre>
+                </div>
+
+                <div ng-show="!main.error && !main.compiling">
+                    <h4 class="h4">Output</h4>
+                    <pre class="compiler-msg">{{ main.output }}</pre>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="assets/js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+
+
+        <!-- Script for adding line numbers -->
+
+        <script type="text/javascript" src="assets/codemirror/binder.js"></script>
+    </body>
+
+</html>
