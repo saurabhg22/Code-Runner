@@ -122,7 +122,7 @@ var languages = [
         mode:       'python',
         defaultCode:    "print(\"Hello World\")",
         code: 'PYTHON3',
-        name: "Python 23"
+        name: "Python 3"
     },
 
     {
