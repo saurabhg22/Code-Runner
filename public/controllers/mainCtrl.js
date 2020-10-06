@@ -21,7 +21,7 @@ angular.module('mainController', [])
         app.output = "";
         code = {
             source: editor.getValue(),
-            testcases: "['" + app.input + "']",
+            input:app.input ,
             lang: app.languages[app.langIndex].code,
 
         }
