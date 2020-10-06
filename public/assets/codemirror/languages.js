@@ -7,7 +7,7 @@ var languages = [
                         "    printf(\"Hello World\");\n" +
                         "    return 0;\n" +
                         "}",
-        code: 1,
+        code: 'C',
         name: "C"
     },
 
@@ -20,7 +20,7 @@ var languages = [
                         "    cout<<\"Hello World\";\n" +
                         "    return 0;\n" +
                         "}",
-        code: 2,
+        code: 'CPP',
         name: "C++"
     },
 
@@ -35,33 +35,10 @@ var languages = [
                         "        Console.WriteLine(\"Hello World\");\n" +
                         "    }\n" +
                         "}",
-        code: 9,
+        code: 'CSHARP',
         name: "C#"
     },
 
-    {
-        mode:           'text/x-d',
-
-        defaultCode:    "import std.stdio;\n\n" +
-                        "void main() {\n" +
-                        "    writeln(\"Hello World\");\n" +
-                        "}",
-
-        code: 22,
-        name: "D"
-    },
-
-    {
-        mode:           'text/x-fortran',
-
-        defaultCode:    "PROGRAM main\n" +
-                        "    IMPLICIT NONE\n\n" +
-                        "    write ( *, '(a)' ) 'Hello World'\n" +
-                        "END PROGRAM main",
-
-        code: 54,
-        name: "Fortran"
-    },
 
     {
         mode:           'text/x-go',
@@ -72,7 +49,7 @@ var languages = [
                         "    fmt.Println(\"Hello World\")\n" +
                         "}",
 
-        code: 21,
+        code: 'GO',
         name: "Go"
     },
 
@@ -82,7 +59,7 @@ var languages = [
         defaultCode:    "main = do\n" +
                         "    print \"Hello World\"",
 
-        code: 12,
+        code: 'HASKELL',
         name: "Haskel"
     },
 
@@ -94,7 +71,7 @@ var languages = [
                         "        System.out.println(\"Hello, World\");\n" +
                         "    }\n" +
                         "}",
-        code: 3,
+        code: 'JAVA',
         name: "Java"
     },
 
@@ -102,7 +79,7 @@ var languages = [
         mode:           'javascript',
 
         defaultCode:    "console.log(\"Hello World\");",
-        code: 20,
+        code: 'JAVASCRIPT_NODE',
         name: "Javascript"
     },
 
@@ -115,14 +92,14 @@ var languages = [
                         "    [pool drain];\n" +
                         "    return 0;\n" +
                         "}",
-        code: 32,
+        code: 'OBJECTIVEC',
         name: "Objective-C"
     },
 
     {
         mode:       'text/x-perl',
         defaultCode:    "print \"Hello World\";",
-        code: 6,
+        code: 'PERL',
         name: "Perl"
     },
 
@@ -131,28 +108,34 @@ var languages = [
         defaultCode:    "<?php\n" +
                         "    echo \"Hello World\";\n" +
                         "?>",
-        code: 7,
+        code: 'PHP',
         name: "PHP"
     },
 
     {
         mode:       'python',
         defaultCode:    "print \"Hello World\"",
-        code: 5,
+        code: 'PYTHON',
         name: "Python 2"
+    },
+    {
+        mode:       'python',
+        defaultCode:    "print(\"Hello World\")",
+        code: 'PYTHON3',
+        name: "Python 23"
     },
 
     {
         mode:       'text/x-rsrc',
         defaultCode:    "print(\"Hello World\")",
-        code: 24,
+        code: 'R',
         name: "R"
     },
 
     {
         mode:       'text/x-ruby',
         defaultCode:    "print(\"Hello World\")",
-        code: 8,
+        code: 'RUBY',
         name: "Ruby"
     },
 
@@ -163,14 +146,14 @@ var languages = [
                         "        println(\"Hello World\")\n" +
                         "    }\n" +
                         "}",
-        code: 15,
+        code: 'SCALA',
         name: "Scala"
     },
 
     {
         mode:       'text/x-swift',
         defaultCode:    "print(\"Hello World\")",
-        code: 51,
+        code: 'SWIFT',
         name: "Swift"
     }
 ]

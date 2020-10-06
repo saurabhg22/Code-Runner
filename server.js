@@ -15,22 +15,26 @@ app.use(bodyParser.json())
 app.use(express.static(__dirname + '/public')); // Allow front end to access public folder
 
 app.post('/run', function (req, res) {
-    var myJSONObject = req.body;
+    var data = req.body;
 
     request({
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
-        url: "http://api.hackerrank.com/checker/submission.json",
+        url: "https://api.hackerearth.com/v3/code/run/",
         method: "POST",
-        json: true,   // <--Very important!!!
-        form: myJSONObject,
+        form: {
+            client_secret:"f144f284a12e0b7d1a379b8fb3f46da9c0670852",
+            source:data.source,
+            lang:data.lang,
+            input:data.input
+        },
     }, function (error, response, body) {
         if(error){
             res.send(error);
         }
         else{
-            res.send(body.result);
+            res.send(body);
         }
     });
 });

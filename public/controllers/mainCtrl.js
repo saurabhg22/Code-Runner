@@ -22,36 +22,34 @@ angular.module('mainController', [])
         code = {
             source: editor.getValue(),
             testcases: "['" + app.input + "']",
-            api_key: 'hackerrank|321272-1482|f581bd9edba11acd361c6365880918eb4a440b73',
             lang: app.languages[app.langIndex].code,
 
         }
         $http.post('/run', code).then(function(data){
             data = data.data;
+            console.log(data)
             if(data.errno == 'ENOENT'){
                 app.cmsg = "Please check your internet connection.";
                 app.error = true;
             }
             else if(data.errors){
-                if(data.errors.source){
+                if(data.message === 'ArgumentMissingError: source is needed!'){
                     app.cmsg = "Source code can not be empty.";
                 }else{
                     app.cmsg = "Something went wrong.";
                 }
                 app.error = true;
             }
-            else if(data.message != null && data.message != undefined){
-                if(data.message[0] == "Success"){
-                    app.output = decodeURIComponent(escape(data.stdout[0]));
-                    app.error = false;
-                }
-                else{
-                    app.cmsg = decodeURIComponent(escape(data.stderr[0]));
-                    app.error = true;
-                }
+            else if(data.compile_status !== "OK"){
+                app.cmsg = data.compile_status;
+                app.error = true;
             }
-            else if(data.compilemessage != "" && data.compilemessage != null && data.compilemessage != undefined){
-                app.cmsg = decodeURIComponent(escape(data.compilemessage));
+            else if(data.run_status.status === 'AC'){
+                app.output = data.run_status.output;
+                app.error = false;
+            }
+            else if(data.run_status.stderr){
+                app.cmsg = data.run_status.stderr;
                 app.error = true;
             }
             else{
